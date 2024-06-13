@@ -282,6 +282,9 @@ header {
     margin-bottom: 5rem;
     padding: 0.4rem;
 }
+.testimonials__container h2 {
+    margin-bottom: 0;
+}
 .testimonial {
     padding: 2rem;
 }
@@ -353,6 +356,7 @@ text-decoration: underline;
     border-top: 1px solid var(--color-bg2);
 }
 /* ==========MEDIA QUERY=========== */
+
 /* ---------------TABLET----------- */
 @media screen and (max-width: 1024px) {
     /* body {
@@ -384,7 +388,6 @@ text-decoration: underline;
         display: none;
     }
     .nav__menu {
-        /* background: red; */
         position: fixed;
         top: 5rem;
         right: 5%;
@@ -392,5 +395,158 @@ text-decoration: underline;
         height: fit-content;
         width: 18rem;
         gap: 0;
+        display: none;
     }
+    .nav__menu li {
+        width: 100%;
+        height: 5.8rem;
+        animation: animateNavBar 400ms linear forwards;
+        transform-origin: top right;
+        opacity: 0;
+    }
+    .nav__menu li:nth-child(2) {
+        animation-delay: 200ms;
+    }
+    .nav__menu li:nth-child(3) {
+        animation-delay: 300ms;
+    }
+    .nav__menu li:nth-child(4) {
+        animation-delay: 400ms;
+    }
+    @keyframes animateNavBar {
+        0% {
+            transform: rotateZ(-90deg) rotateY(90deg) scale(0.1);
+
+        }
+        100% {
+            transform: rotateZ(0) rotateY(0) scale(1);
+            opacity: 1;
+        }
+    }
+    .nav__menu li a {
+        background: var(--color-primary);
+        box-shadow: -4rem 6rem 10rem rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+    }
+    .nav__menu li a:hover {
+        background: var(--color-bg1);
+        color: var(--color-white);
+    }
+
+    /* ------HEADER----- */
+    header {
+        height: 40%;
+        margin-bottom: 4rem;
+        /* background: rgb(41, 88, 26); */
+
+    }
+    .header__container {
+        gap: 0;
+        padding-bottom: 1rem;
+        /* background: red; */
+
+    }
+    /* ------CATEGORY----- */
+    .categories {
+        height: auto;
+    }
+    .categories__container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    .categories__left {
+        margin-right: 0;
+    }
+    /* ------POPULAR COURSES----- */
+    .courses {
+        margin-top: 0;
+    }
+    .courses__container {
+        display: grid;
+        grid-template-columns:  1fr 1fr;
+        gap: 2rem;
+    }
+    /* ***********FQAs************** */
+
+.faqs__container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.faq {
+    padding: 1rem;
+}
+    /* ***********FOOTER************** */
+
+    .footer__container {
+        
+        grid-template-columns: 1fr 1fr;
+        /* gap: 3rem; */
+    }
+}
+
+/* ------------------MOBILE PHONE--------------------- */
+@media screen and (max-width: 600px) {
+    .container {
+        width: var(--container-width-sm);
+    }
+
+    /* ------NAV BAR---- */
+    .nav__menu {
+        right: 3%;
+    }
+    /* -----------HEADER---- */
+    header {
+        max-height: 100%;
+    }
+    
+    .header__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        margin-top: 0;
+    }
+    .header__left p {
+        margin-bottom: 0.5rem;
+    }
+    
+    /* -----------CATEGORIES------- */
+    .categories__right {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem;
+    }
+    .category {
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+    .category__icon {
+        margin-top: 4px;
+        display: inline-block;
+    }
+
+    /* ----------POPULAR COURSES------ */
+    .courses__container {
+        grid-template-columns: 1fr;
+    }
+
+    /* ------TESTIMONALS----- */
+    .testimonial__body {
+        padding: 1.2rem;
+    }
+
+    /* ------FOOTER----- */
+    .footer__container {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer__1 p {
+        margin: 1rem auto;
+    } 
+    .footer__socials {
+        justify-content: center;
+    }
+
+    
 }

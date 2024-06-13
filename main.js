@@ -15,9 +15,29 @@ myFaq.forEach(item => {
         const eyecon = item.querySelector('.faq__icon i');
         if (eyecon.className === 'uil uil-plus') {
             eyecon.className = 'uil uil-music';
+            
         }
         else{
             eyecon.className = 'uil uil-plus';
         }
     })
 })
+
+const open_nav_button = document.querySelector('#open-menu-btn');
+const close_nav_button = document.querySelector('#close-menu-btn');
+
+const nav_menu = document.querySelector('.nav__menu');
+
+open_nav_button.addEventListener('click', () => {
+    nav_menu.style.display = "flex";
+    close_nav_button.style.display = "inline-block";
+    open_nav_button.style.display = "none";
+    
+})
+ const closeNavBar = () => {
+    nav_menu.style.display = "none";
+    close_nav_button.style.display = "none";
+    open_nav_button.style.display = "inline-block";
+ }
+ 
+close_nav_button.addEventListener('click', closeNavBar);
